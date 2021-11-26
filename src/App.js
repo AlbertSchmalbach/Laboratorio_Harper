@@ -1,10 +1,13 @@
 import React from 'react';
+import Inicio from './Components/Inicio';
 
 
 function App() {
   return (
     <div>
-      <h1>Buenas tardes</h1>
+      <Inicio/>
+      
+
     </div>
   );
 }
