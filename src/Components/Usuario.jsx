@@ -1,6 +1,6 @@
 import React from "react";
 
-const Perfil = () => {
+const Usuario = () => {
   return (
     <>
       <header>
@@ -139,4 +139,4 @@ const Perfil = () => {
   );
 };
 
-export default Perfil;
+export default Usuario;

@@ -21,7 +21,7 @@ class Registro extends Component {
                   </li>
                   <li className="nav-item">
                     {" "}
-                    <a className="nav-link ms-5 text-secondary cursor">
+                    <a className="nav-link ms-5 text-secondary active cursor">
                       {" "}
                       REGISTRESE{" "}
                     </a>{" "}
@@ -49,28 +49,30 @@ class Registro extends Component {
           {/* formulario de registro */}
           <div className="container d-flex justify-content-center align-items-center">
             <form action="" className="w-100 mt-5">
-            <div className = "row d-flex justify-content-around w-70" >
-            <div class="mb-3 w-50">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control w-70" id="nombre"/>
+            <div className = "row d-flex justify-content-evenly w-70" >
+            <div class="mb-3 w-25 col-6">
+                <label htmlFor="nombre" className="form-label">Nombre</label>
+                <input type="text" className="form-control w-70" name="nombre"/>
             </div>
-            <div class="mb-3 w-50">
-                <label for="apellido" class="form-label">Apellido</label>
-                <input type="text" class="form-control w-70" id="apellido"/>
-            </div>
-            </div>
-            <div className = "row d-flex justify-content-around w-70" >
-            <div class="mb-3 w-50">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control w-70" id="email"/>
-            </div>
-            <div class="mb-3 w-50">
-                <label for="contrasena" class="form-label">Contraseña</label>
-                <input type="password" class="form-control w-70" id="contrasena"/>
+            <div className="mb-3 w-25 col-6">
+                <label htmlFor="apellido" className="form-label">Apellido</label>
+                <input type="text" className="form-control w-70" name="apellido"/>
             </div>
             </div>
-
-            <button type="submit" class="btn btn-primary w-25">Enviar</button>
+            <div className = "row d-flex justify-content-evenly w-70" >
+            <div className="mb-3 w-25 col-6">
+                <label htmlFor="email" className="form-label">Email</label>
+                <input type="email" className="form-control w-70" name="email"/>
+            </div>
+            <div className="mb-3 w-25 col-6">
+                <label htmlFor="contrasena" className="form-label">Contraseña</label>
+                <input type="password" className="form-control w-70" name="contrasena"/>
+            </div>
+            </div>
+            <div className="row d-flex justify-content-center w-70">
+            <button type="submit" className="btn btn-primary w-25">Agregar</button>
+            </div>
+            
             </form>
             
           </div>

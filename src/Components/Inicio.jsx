@@ -47,14 +47,11 @@ class Inicio extends Component {
             <h1><a className="boton-cita cursor">Agende su cita aquí</a></h1>
           </div>
           <div className="col">
-          <button type="button" class="boton">Libro de agendas</button>
+          <button type="button" className="boton">Libro de agendas</button>
           </div>
 
         </div>
-        {/* <div className="text-center p-3">
-          © 2021 Copyright -
-          <a className="text-white" href="#">&nbsp; Laboratorios Harper</a>
-        </div> */}
+        
 
   </footer>
       </div>
