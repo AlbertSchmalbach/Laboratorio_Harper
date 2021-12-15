@@ -5,16 +5,18 @@ import Registro from './Components/Registro.jsx';
 import Usuario from './Components/Usuario.jsx';
 import Admin from './Components/Admin.jsx';
 import Resultados from './Components/Resultados.jsx';
+import Agenda from './Components/AgendaCita.jsx';
 
 function App() {
   return (
     <div>
-      {/* <Inicio/> */}
-      <Sesion/>
+      <Inicio/>
+      {/* <Sesion/> */}
       {/* <Registro/> */}
       {/* <Usuario/> */}
       {/* <Admin/>  */}
       {/* <Resultados/> */}
+      {/* <Agenda/> */}
 
     </div>
   );

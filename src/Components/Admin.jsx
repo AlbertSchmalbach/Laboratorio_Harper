@@ -1,30 +1,11 @@
 import React from "react";
 import CrearUsuario from "./CrearUsuario";
+import Header from "./Header";
 
 const Admin = () => {
   return (
     <>
-      <header>
-        <div className="container-fluid bg-header shadow-sm">
-          <div className="row d-flex p-5 ms-2">
-            <div className="col">
-              <h2> LABORATORIOS HARPER</h2>
-            </div>
-            <div className="col">
-              <nav className="nav d-flex align-items-center justify-content-center">
-                <select
-                  className="form-select w-25 bg-light"
-                  aria-label=".form-select-lg example"
-                >
-                  <option value="perfil">Perfil</option>
-                  <option value="resultado">Administrador/Usuario</option>
-                  <option value="salir">Salir</option>
-                </select>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
       <main>
         <div className="container-fluid">
           <div className="row bg-primary bg-gradient bg-opacity-50">
@@ -91,7 +72,7 @@ const Admin = () => {
                   </tr>
                 </tbody>
               </table>
-              
+
               {/* <h2 className="text-center bg-primary text-white p-2">Crear Usuario</h2>
               <div className="container d-flex justify-content-center align-items-center">
                 
@@ -147,7 +128,7 @@ const Admin = () => {
                   </div>
                 </form>
               </div> */}
-              <CrearUsuario/>
+              <CrearUsuario />
             </div>
           </div>
         </div>

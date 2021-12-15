@@ -1,60 +1,61 @@
-import React from "react";
+//import React from "react";
+import Swal from "sweetalert2";
+import { useState } from "react";
+import Header from "./Header";
 
 const Sesion = () => {
-  /* const [sesion, setSesion] = useState({
+  const initialState = {
     login: "",
     password: "",
-  });
+  };
 
-  const [error, setError] = useState(false);
-
-  const handleChange = (e) => {console.log(e.target.value);}
+  const [sesion, setSesion] = useState({ initialState });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { login, password } = sesion;
-    if (login === "admin" && password === "admin") {
-      console.log("Login correcto");
-      setError(false);
-    }else{
-      console.log("Login incorrecto");
-      setError(true);
+
+    // pequeña validación
+    if (sesion.login==="") {
+      e.target[0].focus();
+      return Swal.fire({
+        title: "Error!",
+        text: "Usuario obligatorio",
+        icon: "error",
+      });
     }
+
+    if (sesion.password==="") {
+      e.target[1].focus();
+      return Swal.fire({
+        title: "Error!",
+        text: "Contraseña obligatorio",
+        icon: "error",
+      });
+    }
+
+    Swal.fire({
+      title: "Éxito",
+      text: "¡Logeado con exito!",
+      icon: "success",
+    });
+
+    // limpiar form
+    setSesion(initialState);
   };
- */
+
+  const handleChange = (e) => {
+    const { name, value, type } = e.target;
+
+    setSesion((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+
   return (
     <div>
-      <header>
-        <div className="container-fluid bg-header shadow-sm">
-          <div className="row d-flex p-5 ms-2">
-            <div className="col">
-              <h2> LABORATORIOS HARPER</h2>
-            </div>
-            <div className="col">
-              <nav className="nav d-flex align-items-center justify-content-center">
-                <li className="nav-item">
-                  {" "}
-                  <a className="nav-link ms-5 active cursor"> HOME </a>{" "}
-                </li>
-                <li className="nav-item">
-                  {" "}
-                  <a className="nav-link ms-5 text-secondary cursor">
-                    {" "}
-                    REGISTRESE{" "}
-                  </a>{" "}
-                </li>
-                <li className="nav-item">
-                  {" "}
-                  <a className="nav-link ms-5 text-secondary active cursor">
-                    {" "}
-                    INICIO DE SESION{" "}
-                  </a>{" "}
-                </li>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
       <main>
         <div className="container-fluid bg-success p-5">
           <div className="row d-flex justify-content-center">
@@ -64,13 +65,19 @@ const Sesion = () => {
           </div>
         </div>
         <div className="container d-flex justify-content-center align-items-center">
-          <form /*onSubmit={handleSubmit}*/ className="w-25 mt-5">
+          {/* {error && <PintarError />} */}
+          <form onSubmit={handleSubmit} className="w-25 mt-5">
             <div class="mb-3">
               <label htmlFor="login" className="form-label">
                 Usuario
               </label>
-              <input type="text" className="form-control w-100" name="login" /* value={sesion.login} 
-              onChange={handleChange} */ />
+              <input
+                type="text"
+                className="form-control  w-100 mb-2"
+                name="login"
+                value={sesion.login}
+                onChange={handleChange}
+              />
             </div>
             <div className="mb-3">
               <label htmlFor="password" className="form-label">
@@ -78,10 +85,10 @@ const Sesion = () => {
               </label>
               <input
                 type="password"
-                className="form-control w-100"
+                className="form-control w-100 mb-2"
                 name="password"
-                /* value={sesion.password} 
-                onChange={handleChange} */
+                value={sesion.password}
+                onChange={handleChange}
               />
             </div>
 
