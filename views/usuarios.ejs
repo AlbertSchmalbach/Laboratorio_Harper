@@ -1,0 +1,35 @@
+<%- include("./template/cabecera", {tituloWeb: 'Pagina de inicio'}) %>
+<div class="container">
+  <h1 class="text-center bg-dark text-white my-4 p-2">Administrar usuarios</h1>
+  <a class="btn btn-success btn-block my-4" href="./usuarios/crear">
+    Crear nuevo usuario
+  </a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">correo</th>
+        <th scope="col">Rol</th>
+        <th scope="col">Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (arrayUsuarios.length > 0) { %> <% arrayUsuarios.forEach(usuario =>
+      { %>
+      <tr>
+        <th scope="row"><%= usuario.id %></th>
+        <td><%= usuario.nombre %></td>
+        <td><%= usuario.correo %></td>
+        <td><%= usuario.rol %></td>
+        <td>
+          <a href="./usuarios/<%= usuario.id %>" class="btn btn-warning btn-sm"
+            >Editar</a
+          >
+        </td>
+      </tr>
+      <% }) %> <% } %>
+    </tbody>
+  </table>
+</div>
+<%- include("./template/footer") %>
